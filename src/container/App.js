@@ -3,7 +3,7 @@ import {SafeAreaView, StyleSheet, ScrollView, StatusBar} from 'react-native'
 
 import {Colors} from 'react-native/Libraries/NewAppScreen'
 
-import {Button, Text} from '../components'
+import {Button, Text, TextInput} from '../components'
 
 const App: () => React$Node = () => {
   return (
@@ -14,6 +14,7 @@ const App: () => React$Node = () => {
           contentInsetAdjustmentBehavior='automatic'
           style={styles.scrollView}>
           <Text label='hola' />
+          <TextInput label='Correo' />
           <Button label='Click' />
         </ScrollView>
       </SafeAreaView>
