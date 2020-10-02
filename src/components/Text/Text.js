@@ -3,7 +3,6 @@ import {Text} from 'react-native'
 
 const CustomText = props => {
   const {label} = props
-  console.log('llamdno al componnete text')
 
   return <Text>{label}</Text>
 }

@@ -5,8 +5,8 @@ import {TouchableOpacity} from 'react-native'
 import {Text} from '../index'
 
 const CustomButton = props => {
-  const {label} = props // destructuring
-  console.log('llamando al componente bton')
+  const {label, onPress} = props // destructuring
+
   return (
     <TouchableOpacity
       style={{
@@ -16,7 +16,8 @@ const CustomButton = props => {
         borderRadius: 4,
         justifyContent: 'center',
         alignItems: 'center',
-      }}>
+      }}
+      onPress={onPress}>
       <Text label={label} />
     </TouchableOpacity>
   )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {SafeAreaView, StyleSheet, ScrollView, StatusBar} from 'react-native'
 
 import {Colors} from 'react-native/Libraries/NewAppScreen'
@@ -6,6 +6,12 @@ import {Colors} from 'react-native/Libraries/NewAppScreen'
 import {Button, Text, TextInput} from '../components'
 
 const App: () => React$Node = () => {
+  const [valueEmail, setValueEmail] = useState('')
+
+  const registrar = () => {
+    console.log('registrando..., con los valores: ', {valueEmail})
+  }
+
   return (
     <>
       <StatusBar barStyle='dark-content' />
@@ -13,9 +19,13 @@ const App: () => React$Node = () => {
         <ScrollView
           contentInsetAdjustmentBehavior='automatic'
           style={styles.scrollView}>
-          <Text label='hola' />
-          <TextInput label='Correo' />
-          <Button label='Click' />
+          <Text label='Registro' />
+          <TextInput
+            label='Correo'
+            value={valueEmail}
+            onChangeText={value => setValueEmail(value)}
+          />
+          <Button label='Click' onPress={registrar} />
         </ScrollView>
       </SafeAreaView>
     </>

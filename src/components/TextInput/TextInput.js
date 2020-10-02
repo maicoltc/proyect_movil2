@@ -1,22 +1,30 @@
 import React from 'react'
-import { TextInput } from 'react-native';
+import {TextInput, View} from 'react-native'
 
-const UselessTextInput = props => {
-  const {label} = props 
+import {Text} from '../'
+
+const CustomTextInput = props => {
+  const {label, value, onChangeText} = props
   console.log('llamando al componente TextInput')
-  const [value, onChangeText] = React.useState('Useless Placeholder');
 
   return (
-    <TextInput
-      style={{ 
-          height: 40, 
-          borderColor: 'gray', 
-          borderWidth: 1 
+    <View>
+      <Text label={label} />
+      <TextInput
+        placeholder='Digita porfavor tu correo'
+        placeholderTextColor='red'
+        value={value}
+        style={{
+          height: 60,
+          borderColor: 'gray',
+          borderWidth: 1,
+          marginHorizontal: 20,
+          borderRadius: 4,
         }}
-      onChangeText={text => onChangeText(text)}
-      value={value}
-    />
-  );
+        onChangeText={text => onChangeText(text)}
+      />
+    </View>
+  )
 }
 
-export default UselessTextInput;
+export default CustomTextInput
