@@ -5,7 +5,6 @@ import {Text} from '../'
 
 const CustomTextInput = props => {
   const {label, value, onChangeText} = props
-  console.log('llamando al componente TextInput')
 
   return (
     <View>
